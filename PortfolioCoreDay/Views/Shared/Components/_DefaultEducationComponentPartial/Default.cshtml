@@ -1,0 +1,26 @@
+﻿@model List<Education>
+
+<div class="container section-title" data-aos="fade-up">
+    <h2>EĞİTİM</h2>
+    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+</div>
+<div class="container" data-aos="fade-up" data-aos-delay="200">
+
+    <div class="row skills-content skills-animation">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-6">
+
+                <div class="resume-item">
+                    <h4>@item.Department</h4>
+                    <h5>@item.EducationDate</h5>
+                    <p><em>@item.University</em></p>
+                    <p>@item.Title</p>
+                </div><!-- Edn Resume Item -->
+
+            </div>
+        }
+
+    </div>
+</div>
