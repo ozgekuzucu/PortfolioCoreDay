@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PortfolioCoreDay.Entities;
 
 namespace PortfolioCoreDay.ViewComponents
 {
@@ -6,7 +7,7 @@ namespace PortfolioCoreDay.ViewComponents
 	{
 		public IViewComponentResult Invoke()
 		{
-			return View();
+			return View(new Message());
 		}
 	}
 }

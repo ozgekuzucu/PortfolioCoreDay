@@ -1,14 +1,14 @@
-﻿@{
+﻿@* @{
     var works = (List<Work>)ViewData["Works"];
     var profile = (About)ViewData["Profile"];
-}
+} *@
 <section id="hero" class="hero section dark-background">
 
-    <img src="@profile.ImageUrl1" alt="" data-aos="fade-in" class="">
+    <img @* src="@profile.ImageUrl1" *@ alt="" data-aos="fade-in" class="">
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>@profile.NameSurname</h2>
+        @* <h2>@profile.NameSurname</h2>
         <p> Çalışma Alanlarım: <span class="typed" data-typed-items="@string.Join(", ", works.Select(x => x.Name))">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-    </div>
+    *@ </div>
 
 </section><!-- /Hero Section -->
