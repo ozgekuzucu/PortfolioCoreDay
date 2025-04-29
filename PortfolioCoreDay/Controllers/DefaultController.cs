@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PortfolioCoreDay.Context;
+using PortfolioCoreDay.Models;
 
 namespace PortfolioCoreDay.Controllers
 {
@@ -8,11 +9,8 @@ namespace PortfolioCoreDay.Controllers
 		PortfolioContext context= new PortfolioContext();
 		public IActionResult Index()
 		{
-			var works = context.Works.ToList();
-			var about = context.Abouts.FirstOrDefault();
-			ViewData["Works"] = works;
-			ViewData["Profile"] = about;
-			return View();
+			var values = context.Works.ToList(); 
+			return View(values);
 		}
 	}
 }
