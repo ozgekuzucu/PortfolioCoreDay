@@ -1,4 +1,4 @@
-# M&Y Akademi .NET 6.0 Portföy Projesi
+# .NET 6.0 Portföy Projesi
 
 M&Y Akademi Danışmanlık bünyesinde, eğitmenim Murat Yücedağ rehberliğinde .NET 6.0 kullanılarak geliştirdiğim portföy uygulamasını sizlere tanıtmaktan mutluluk duyuyorum! Bu proje, hem teknik becerilerimi pekiştirmek hem de dinamik içeriklerle kullanıcı dostu bir web uygulaması oluşturmak amacıyla hayata geçirilmiştir.
 
