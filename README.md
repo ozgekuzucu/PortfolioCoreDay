@@ -105,10 +105,6 @@ UI kısmı, veri tabanından dinamik olarak veri çekerek kullanıcıya sürekli
    ![UI Paneli](images/iletişim.png)
 ---
 
-## 📍 Harita ve Footer
-
-Google Maps API kullanılarak kullanıcıların konum bilgisi harita üzerinde gösterilebilir. Lokasyon bilgisi veri tabanından dinamik olarak alınır.
-
 ## 🚀 Kullanılan Teknolojiler
 
 - **ASP.NET Core 6.0**: Proje altyapısında dinamik ve sürdürülebilir bir yapı oluşturmak için bu modern framework kullanılmıştır.
