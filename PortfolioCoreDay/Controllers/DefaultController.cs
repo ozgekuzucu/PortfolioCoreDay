@@ -9,8 +9,7 @@ namespace PortfolioCoreDay.Controllers
 		PortfolioContext context= new PortfolioContext();
 		public IActionResult Index()
 		{
-			var values = context.Works.ToList(); 
-			return View(values);
+			return View();
 		}
 	}
 }

@@ -8,8 +8,13 @@ namespace PortfolioCoreDay.ViewComponents
 		PortfolioContext context = new PortfolioContext();
 		public IViewComponentResult Invoke()
 		{
-			var values = context.Statistics.ToList();
-			return View(values);
+			ViewBag.v1 = context.Skills.Count();//Yetenek Sayısı
+			ViewBag.v2 = context.Portfolios.Count();//Proje Sayısı
+			ViewBag.v3 = context.Messages.Count();//Gelen Mesaj Sayısı
+			Random random = new Random();
+			int rnd = random.Next(10, 31);//Rastgele Sayı(10-30)
+			ViewBag.v4 = rnd;
+			return View();
 		}
 	}
 }

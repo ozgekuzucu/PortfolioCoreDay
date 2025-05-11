@@ -8,24 +8,46 @@ namespace PortfolioCoreDay.Controllers
 {
 	public class PortfolioController : Controller
 	{
-		PortfolioContext conext = new PortfolioContext();
+		PortfolioContext context = new PortfolioContext();
 		public IActionResult ProjectList()
 		{
-			var values = conext.Portfolios.Include(x => x.Category).ToList();
+			var values = context.Portfolios.Include(x => x.Category).ToList();
 			return View(values);
 		}
 		[HttpGet]
 		public IActionResult CreatePortfolio()
 		{
-			var values = new SelectList(conext.Categories.ToList(), "CategoryId", "CategoryName");
+			var values = new SelectList(context.Categories.ToList(), "CategoryId", "CategoryName");
 			ViewBag.v = values;
 			return View();
 		}
 		[HttpPost]
 		public IActionResult CreatePortfolio(Portfolio portfolio)
 		{
-			conext.Portfolios.Add(portfolio);
-			conext.SaveChanges();
+			context.Portfolios.Add(portfolio);
+			context.SaveChanges();
+			return RedirectToAction("ProjectList");
+		}
+		[HttpGet]
+		public IActionResult UpdatePortfolio(int id)
+		{
+			var values = context.Portfolios.Include(x => x.Category).FirstOrDefault(p => p.PortfolioId == id);
+			var values2 = new SelectList(context.Categories.ToList(), "CategoryId", "CategoryName");
+			ViewBag.v = values2;
+			return View(values);
+		}
+		[HttpPost]
+		public IActionResult UpdatePortfolio(Portfolio portfolio)
+		{
+			context.Portfolios.Update(portfolio);
+			context.SaveChanges();
+			return RedirectToAction("ProjectList");
+		}
+		public IActionResult DeletePortfolio(int id)
+		{
+			var values = context.Portfolios.Find(id);
+			context.Portfolios.Remove(values);
+			context.SaveChanges();
 			return RedirectToAction("ProjectList");
 		}
 	}

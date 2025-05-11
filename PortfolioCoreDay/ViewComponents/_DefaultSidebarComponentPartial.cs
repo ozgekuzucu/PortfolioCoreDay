@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PortfolioCoreDay.Context;
 
 namespace PortfolioCoreDay.ViewComponents
 {
 	public class _DefaultSidebarComponentPartial : ViewComponent
 	{
+		PortfolioContext context = new PortfolioContext();
 		public IViewComponentResult Invoke()
 		{
-			return View();
+			var values = context.Features.ToList();
+			return View(values);
 		}
 	}
 }

@@ -1,0 +1,35 @@
+﻿@model Portfolio
+@{
+    ViewData["Title"] = "UpdatePortfolio";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+@using (Html.BeginForm("UpdatePortfolio", "Portfolio", FormMethod.Post))
+{
+    <br />
+    @Html.HiddenFor(x => x.PortfolioId)
+    ;
+    @Html.Label("Proje Başlığı")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", style = "border:1px solid black;" })
+    @Html.ValidationMessageFor(x => x.Title)
+    <br />
+    <label>Görsel 1</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", style = "border:1px solid black;" })
+    @Html.ValidationMessageFor(x => x.ImageUrl)
+    <br />
+    <label>Proje URL</label>
+    @Html.TextBoxFor(x => x.GithubUrl, new { @class = "form-control", style = "border:1px solid black;" })
+    @Html.ValidationMessageFor(x => x.GithubUrl)
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control", style = "border:1px solid black;" })
+    @Html.ValidationMessageFor(x => x.Description)
+    <br />
+    <label>Kategori</label>
+    <select asp-for="CategoryId" asp-items="ViewBag.v" class="form-control" style="border:1px solid black;">
+        <option value="">-- Seçiniz --</option>
+    </select>
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+}
